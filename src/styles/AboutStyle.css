@@ -1,0 +1,29 @@
+.about-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+  text-align: center;
+}
+.about-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 18px;
+  color: #b22222;
+}
+.about-container p {
+  font-size: 1.2rem;
+  margin-bottom: 28px;
+}
+.about-images {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.about-images img {
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
+}
