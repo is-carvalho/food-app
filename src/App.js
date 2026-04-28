@@ -10,7 +10,7 @@ import Layout from "./components/Layouts/Layout";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/food-app">
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
