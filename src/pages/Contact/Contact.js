@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "../../styles/ContactStyle.css";
 
 const Contact = () => {
+  useEffect(() => {
+    document.body.classList.add("contact-page");
+    return () => {
+      document.body.classList.remove("contact-page");
+    };
+  }, []);
   const [form, setForm] = useState({ nome: "", email: "", mensagem: "" });
   const [enviado, setEnviado] = useState(false);
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import "../../styles/MenuStyle.css";
@@ -50,22 +50,31 @@ const burgers = [
   },
 ];
 
-const Menu = () => (
-  <div className="menu-container">
-    <h1>Nosso Menu</h1>
-    <CardGroup>
-      {burgers.map((burger, idx) => (
-        <Card key={idx} className="menu-card">
-          <Card.Img variant="top" src={burger.img} alt={burger.name} />
-          <Card.Body>
-            <Card.Title>{burger.name}</Card.Title>
-            <Card.Text>{burger.desc}</Card.Text>
-            <div className="menu-price">{burger.price}</div>
-          </Card.Body>
-        </Card>
-      ))}
-    </CardGroup>
-  </div>
-);
+const Menu = () => {
+  useEffect(() => {
+    document.body.classList.add("menu-page");
+    return () => {
+      document.body.classList.remove("menu-page");
+    };
+  }, []);
+
+  return (
+    <div className="menu-container">
+      <h1>Nosso Menu</h1>
+      <CardGroup>
+        {burgers.map((burger, idx) => (
+          <Card key={idx} className="menu-card">
+            <Card.Img variant="top" src={burger.img} alt={burger.name} />
+            <Card.Body>
+              <Card.Title>{burger.name}</Card.Title>
+              <Card.Text>{burger.desc}</Card.Text>
+              <div className="menu-price">{burger.price}</div>
+            </Card.Body>
+          </Card>
+        ))}
+      </CardGroup>
+    </div>
+  );
+};
 
 export default Menu;

@@ -59,6 +59,15 @@ header .nav-link {
   transition: all 15ms ease-in-out;
 }
 
+/* Header sobre fundo claro nas páginas About, Menu, Shop, Blog, Contact */
+body.about-page header .navbar:not(.sticky) .nav-link,
+body.menu-page header .navbar:not(.sticky) .nav-link,
+body.shop-page header .navbar:not(.sticky) .nav-link,
+body.blog-page header .navbar:not(.sticky) .nav-link,
+body.contact-page header .navbar:not(.sticky) .nav-link {
+  color: #222 !important;
+}
+
 header .sticky .nav-link {
   color: var(--light-black);
 }
